@@ -5,10 +5,13 @@ import Home from "./containers/home";
 import * as serviceWorker from "./serviceWorker";
 import theme from "./theme";
 import { ThemeProvider } from "@material-ui/core/styles";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const app = (
   <ThemeProvider theme={theme}>
-    <Home />
+    <Router basename={process.env.PUBLIC_URL}>
+      <Home />
+    </Router>
   </ThemeProvider>
 );
 
