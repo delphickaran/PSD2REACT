@@ -65,7 +65,7 @@ export const List = props => {
                     alt="campaign"
                   />
                 </Grid>
-                <Grid item style={{ marginLeft: 10 }}>
+                <Grid item className={classes.headerContainer}>
                   <Typography className={classes.headerName}>
                     {val.name}
                   </Typography>
@@ -94,7 +94,7 @@ export const List = props => {
                     handleViewPriceClick(val);
                   }}
                 >
-                  <Grid item style={{ alignItems: "center", display: "flex" }}>
+                  <Grid item className={classes.priceImageContainer}>
                     <img src={PriceImage} width={18} alt="campaign" />
                   </Grid>
                   <Grid item>

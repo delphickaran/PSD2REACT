@@ -4,6 +4,7 @@ export const styles = {
     margin: 10,
     position: "relative"
   },
+  headerContainer: { marginLeft: 10, marginBottom: 5 },
   headerImage: {
     boxShadow: "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)",
     borderRadius: 10,
@@ -21,6 +22,7 @@ export const styles = {
     color: "rgba(0,0,0,0.4)",
     fontSize: 14
   },
+  priceImageContainer: { alignItems: "center", display: "flex" },
   pricingText: { margin: "30px 0px 7px 0px", fontWeight: 500 },
   actionButtonStyles: {
     color: "#546788",
