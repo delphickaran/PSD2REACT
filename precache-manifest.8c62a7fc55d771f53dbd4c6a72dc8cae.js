@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bcc79047a7af9d7e5499c2d32238af24",
+    "revision": "3088b79ffb5997d998e9a0456ce4e044",
     "url": "/PSD2REACT/index.html"
   },
   {
-    "revision": "f931eed04695d8084543",
+    "revision": "36d1962ddf3ae4879f44",
     "url": "/PSD2REACT/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/PSD2REACT/static/js/2.ce9bcf68.chunk.js.LICENSE"
   },
   {
-    "revision": "f931eed04695d8084543",
-    "url": "/PSD2REACT/static/js/main.07b29876.chunk.js"
+    "revision": "36d1962ddf3ae4879f44",
+    "url": "/PSD2REACT/static/js/main.faf46ef4.chunk.js"
   },
   {
     "revision": "c19433accf120dd9b652",
