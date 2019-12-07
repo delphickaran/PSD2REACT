@@ -25,6 +25,7 @@ export default function Table(props) {
         columns={props.columns}
         data={props.data}
         updateData={props.updateData}
+        type={props.type}
       />
     </Paper>
   );
@@ -70,7 +71,7 @@ const TableBody = props => {
   };
 
   const onCalenderChange = val => {
-    props.updateData(val.valueOf(), selectedIndex);
+    props.updateData(val.valueOf(), selectedIndex, props.type);
     setCalenderValue(val.valueOf());
   };
 
@@ -104,9 +105,7 @@ const TableBody = props => {
                 className={classes.tableBodyColumn1Caption}
                 variant={"body2"}
               >
-                {moment(val.createdOn)
-                  .startOf("day")
-                  .fromNow()}
+                {moment(val.createdOn).fromNow()}
               </Typography>
             </Grid>
             <Grid item md={props.columns[1].size}>

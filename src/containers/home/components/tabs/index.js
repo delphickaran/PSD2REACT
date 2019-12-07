@@ -9,6 +9,7 @@ import Table from "../table";
 import { mockData } from "../../../../mockData";
 import Hidden from "@material-ui/core/Hidden";
 import { List } from "../list";
+import { TYPES } from "../../../../constants/types";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -57,15 +58,10 @@ const columns = [
   }
 ];
 
-export default function CustomTabs() {
+export default function CustomTabs(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-  const [data, updateData] = React.useState(mockData.data);
-
-  const updateDataCallback = (date, index) => {
-    data[index] = { ...data[index], createdOn: date };
-    updateData(data);
-  };
+  //const [data, updateData] = React.useState(mockData.data);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -88,16 +84,53 @@ export default function CustomTabs() {
         <Hidden smDown>
           <Table
             columns={columns}
-            data={mockData.data}
-            updateData={updateDataCallback}
+            data={props.data.futureCampaign}
+            updateData={props.updateDataCallback}
+            type={TYPES.futureCampaign}
           />
         </Hidden>
         <Hidden mdUp>
-          <List data={mockData.data} updateData={updateDataCallback} />
+          <List
+            data={props.data.futureCampaign}
+            updateData={props.updateDataCallback}
+            type={TYPES.futureCampaign}
+          />
         </Hidden>
       </TabPanel>
-      <TabPanel value={value} index={1}></TabPanel>
-      <TabPanel value={value} index={2}></TabPanel>
+      <TabPanel value={value} index={1}>
+        <Hidden smDown>
+          <Table
+            columns={columns}
+            data={props.data.liveCampaign}
+            updateData={props.updateDataCallback}
+            type={TYPES.liveCampaign}
+          />
+        </Hidden>
+        <Hidden mdUp>
+          <List
+            data={props.data.liveCampaign}
+            updateData={props.updateDataCallback}
+            type={TYPES.liveCampaign}
+          />
+        </Hidden>
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        <Hidden smDown>
+          <Table
+            columns={columns}
+            data={props.data.pastCampaign}
+            updateData={props.updateDataCallback}
+            type={TYPES.pastCampaign}
+          />
+        </Hidden>
+        <Hidden mdUp>
+          <List
+            data={props.data.pastCampaign}
+            updateData={props.updateDataCallback}
+            type={TYPES.pastCampaign}
+          />
+        </Hidden>
+      </TabPanel>
     </div>
   );
 }

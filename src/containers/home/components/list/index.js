@@ -37,7 +37,7 @@ export const List = props => {
   };
 
   const onCalenderChange = val => {
-    props.updateData(val.valueOf(), selectedIndex);
+    props.updateData(val.valueOf(), selectedIndex, props.type);
     setCalenderValue(val.valueOf());
   };
 
@@ -54,9 +54,7 @@ export const List = props => {
         return (
           <Paper elevation={3} key={key} className={classes.root}>
             <Typography className={classes.banner}>
-              {moment(val.createdOn)
-                .startOf("day")
-                .fromNow()}
+              {moment(val.createdOn).fromNow()}
             </Typography>
             <Grid container>
               <Grid container alignItems={"flex-end"} style={{}}>
